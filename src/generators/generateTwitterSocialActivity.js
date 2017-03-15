@@ -10,10 +10,10 @@ export default function twitterTransformer (message) {
   }
   const socialActivity = {
     ActivityURL: _.get(message, 'link'),
-    AuthorID: _.get(message, 'user.id'),
-    AuthorPictureURL: _.get(message, 'user.profile_picture'),
-    AuthorRealName: _.get(message, 'user.full_name'),
-    AuthorUsername: _.get(message, 'user.username'),
+    AuthorID: _.get(message, 'actor.id'),
+    AuthorPictureURL: _.get(message, 'actor.image'),
+    AuthorRealName: _.get(message, 'actor.displayName'),
+    AuthorUsername: _.get(message, 'actor.preferredUsername'),
     BodyText: _.get(message, 'body'),
     ID: message.id,
     Network: 'twitter',
